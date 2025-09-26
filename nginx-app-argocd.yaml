@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/VanGoMu/argo_app.git
     targetRevision: HEAD
-    path: app_manifests
+    path: app-manifests
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx-app
