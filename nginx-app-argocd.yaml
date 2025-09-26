@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/tu-usuario/tu-repo.git
+    repoURL: https://github.com/VanGoMu/argo_app.git
     targetRevision: HEAD
     path: app-manifests
   destination:
