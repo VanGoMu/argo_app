@@ -11,10 +11,10 @@ spec:
   source:
     repoURL: https://github.com/VanGoMu/argo_app.git
     targetRevision: HEAD
-    path: app-manifests
+    path: app_manifests
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: nginx-app
   syncPolicy:
     automated:
       prune: true
