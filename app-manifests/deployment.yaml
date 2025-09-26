@@ -1,4 +1,4 @@
-# app-manifests/deployment.yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -26,7 +26,6 @@ spec:
         image: nginx:1.21
         ports:
         - containerPort: 80
-        # Agregar contenido personalizado
         volumeMounts:
         - name: html-content
           mountPath: /usr/share/nginx/html
