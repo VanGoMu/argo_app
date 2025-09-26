@@ -21,6 +21,10 @@ spec:
         image: nginx:1.21
         ports:
         - containerPort: 80
+        # Agregar contenido personalizado
+        volumeMounts:
+        - name: html-content
+          mountPath: /usr/share/nginx/html
         resources:
           requests:
             memory: "64Mi"
@@ -28,3 +32,7 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+      volumes:
+      - name: html-content
+        configMap:
+          name: nginx-html
