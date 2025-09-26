@@ -5,7 +5,7 @@ metadata:
   name: nginx-app
   namespace: argocd
   annotations:
-    argocd.argoproj.io/refresh: "10s"
+    argocd.argoproj.io/refresh: "60s"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
