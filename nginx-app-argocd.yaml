@@ -1,11 +1,11 @@
-# nginx-app-argocd.yaml
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nginx-app
   namespace: argocd
   annotations:
-    argocd.argoproj.io/refresh: "60s"
+    argocd.argoproj.io/refresh: "10s"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -23,9 +23,12 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
     retry:
-      limit: 2
+      limit: 5
       backoff:
         duration: 5s
         factor: 2
-        maxDuration: 3m
+        maxDuration: 1m
+  revisionHistoryLimit: 3
