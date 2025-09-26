@@ -7,7 +7,12 @@ metadata:
   labels:
     app: nginx-app
 spec:
-  replicas: 6
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   selector:
     matchLabels:
       app: nginx-app
