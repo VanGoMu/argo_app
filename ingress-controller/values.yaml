@@ -1,0 +1,51 @@
+controller:
+  # Para clusters locales, usar NodePort es más práctico
+  service:
+    type: NodePort
+    nodePorts:
+      http: 32080
+      https: 32443
+  
+  # Configurar para desarrollo local
+  ingressClassResource:
+    default: true
+    name: nginx
+  
+  # Recursos más pequeños para local
+  resources:
+    requests:
+      cpu: 100m
+      memory: 90Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+  
+  # Configuraciones útiles para desarrollo
+  config:
+    # Logs más detallados
+    log-level: "2"
+    # Permitir snippets para testing
+    allow-snippet-annotations: "true"
+    # Configurar para desarrollo
+    ssl-redirect: "false"
+    force-ssl-redirect: "false"
+  
+  # Para minikube/kind/k3s
+  hostNetwork: false
+  dnsPolicy: ClusterFirst
+  
+  # Tolerations para nodos master (útil en clusters pequeños)
+  tolerations:
+  - key: node-role.kubernetes.io/master
+    operator: Equal
+    effect: NoSchedule
+  - key: node-role.kubernetes.io/control-plane
+    operator: Equal
+    effect: NoSchedule
+
+# Deshabilitar métricas si no las necesitas
+defaultBackend:
+  enabled: false
+
+# Para desarrollo, no necesitas réplicas múltiples
+replicaCount: 1

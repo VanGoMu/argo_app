@@ -11,7 +11,7 @@ data:
         <title>NGINX App - ArgoCD</title>
     </head>
     <body>
-        <h1>🚀 NGINX App funcionando!</h1>
+        <h1>[UP] NGINX App funcionando!</h1>
         <p>Desplegado con ArgoCD</p>
         <p>Namespace: nginx-app-ns</p>
         <p>Ingress: nginx-app.local</p>
