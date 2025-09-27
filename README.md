@@ -41,12 +41,12 @@ graph TB
         NodePort
     end
 
-    style Client fill:#e1f5fe
-    style NodePort fill:#f3e5f5
-    style IngressController fill:#fff3e0
-    style ClusterIP fill:#e8f5e8
-    style Pod1 fill:#fff8e1
-    style Pod2 fill:#fff8e1
+    style Client fill:#2196f3,stroke:#1976d2,stroke-width:2px,color:#fff
+    style NodePort fill:#9c27b0,stroke:#7b1fa2,stroke-width:2px,color:#fff
+    style IngressController fill:#ff9800,stroke:#f57c00,stroke-width:2px,color:#fff
+    style ClusterIP fill:#4caf50,stroke:#388e3c,stroke-width:2px,color:#fff
+    style Pod1 fill:#ffc107,stroke:#ffa000,stroke-width:2px,color:#000
+    style Pod2 fill:#ffc107,stroke:#ffa000,stroke-width:2px,color:#000
 ```
 
 3. Cómo funciona la red en Kubernetes
