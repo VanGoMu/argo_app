@@ -15,7 +15,7 @@ Acceder a través del NodePort del Ingress Controller:
     HTTPS: https://test.local:32443
 2. Diagrama de la configuración
 
-```
+```mermaid
 graph TB
     Client[Cliente/Navegador] --> Host[Host: test.local:32080]
     Host --> NodePort[NodePort Service<br/>Puerto 32080/32443]
@@ -60,7 +60,7 @@ NodePort: Expone el servicio en un puerto de cada nodo
 LoadBalancer: Para clusters en cloud con load balancer externo
 Flujo de red en tu configuración:
 
-```
+```mermaid
 sequenceDiagram
     participant C as Cliente
     participant N as Nodo (NodePort)
