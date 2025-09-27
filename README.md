@@ -78,6 +78,21 @@ sequenceDiagram
     S->>IC: Respuesta
     IC->>N: Respuesta
     N->>C: Respuesta final
+
+    %%{init: {'theme':'base', 'themeVariables': { 
+        'primaryColor': '#2196f3',
+        'primaryTextColor': '#000000ff',
+        'primaryBorderColor': '#1976d2',
+        'lineColor': '#030101ff',
+        'sectionBkgColor': '#f5f5f5',
+        'altSectionBkgColor': '#e0e0e0',
+        'gridColor': '#bdbdbd',
+        'c0': '#2196f3',
+        'c1': '#9c27b0',
+        'c2': '#ff9800',
+        'c3': '#4caf50', 
+        'c4': '#ffc107'
+    }}}%%
 ```
 4. Componentes de red involucrados:
 Ingress Controller (NGINX):
