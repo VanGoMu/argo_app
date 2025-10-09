@@ -6,13 +6,16 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: https://github.com/VanGoMu/argo_app.git
-    targetRevision: HEAD
-    path: bbdd
-    helm:
-      valueFiles:
-        - values.yaml
+  sources:
+    - repoURL: https://charts.bitnami.com/bitnami
+      chart: postgresql
+      targetRevision: 13.2.22
+      helm:
+        valueFiles:
+          - $values/bbdd/values.yaml
+    - repoURL: https://github.com/VanGoMu/argo_app.git
+      targetRevision: HEAD
+      ref: values
   destination:
     server: https://kubernetes.default.svc
     namespace: ddbb
