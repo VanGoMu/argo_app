@@ -1,0 +1,9 @@
+apiVersion: v2
+name: bbdd
+description: A Helm chart for PostgreSQL using Bitnami official chart
+version: 0.1.0
+appVersion: "15.4"
+dependencies:
+- name: postgresql
+  version: 13.2.22
+  repository: https://charts.bitnami.com/bitnami
