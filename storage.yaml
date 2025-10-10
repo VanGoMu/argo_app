@@ -20,8 +20,14 @@ spec:
   capacity:
     storage: 20Gi
   accessModes:
-    - ReadWriteMany  # NFS soporta múltiples lectores/escritores
+    - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: 192.168.0.201
     path: /srv/nfs/postgres-data
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: node-role.kubernetes.io/control-plane
+          operator: DoesNotExist  # Excluye nodos con rol control-plane
