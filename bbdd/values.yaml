@@ -5,7 +5,7 @@ postgresql:
     registry: docker.io
     repository: bitnami/postgresql
     tag: "latest"  # Versión más reciente disponible
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     
   # Configuración de autenticación
   auth:
