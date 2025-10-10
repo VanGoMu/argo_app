@@ -3,9 +3,9 @@ name: postgres-bbdd
 description: PostgreSQL database for application using Bitnami chart
 type: application
 version: 0.1.0
-appVersion: "15.4.0"
+appVersion: "18.0.8"
 
 dependencies:
   - name: postgresql
-    version: 15.2.5  # Versión más reciente
+    version: 18.0.8  # Versión más reciente
     repository: https://charts.bitnami.com/bitnami
