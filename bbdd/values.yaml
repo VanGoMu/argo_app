@@ -1,11 +1,5 @@
 namespace: ddbb
 postgresql:
-  # Forzar imagen específica disponible
-  image:
-    registry: docker.io
-    repository: bitnami/postgresql
-    tag: "latest"  # Versión más reciente disponible
-    pullPolicy: Always
     
   # Configuración de autenticación
   auth:
