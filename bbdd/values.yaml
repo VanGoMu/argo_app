@@ -17,7 +17,7 @@ postgresql:
     persistence:
       enabled: true
       size: 15Gi
-      storageClass: standard
+      storageClass: local-storage
       accessModes:
         - ReadWriteOnce
     
