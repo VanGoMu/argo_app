@@ -1,12 +1,5 @@
 namespace: ddbb
 
-# Configuración de imagen a nivel raíz
-image:
-  registry: docker.io
-  repository: bitnami/postgresql
-  tag: "latest"
-  pullPolicy: Always
-
 postgresql:
   # Configuración de autenticación
   auth:

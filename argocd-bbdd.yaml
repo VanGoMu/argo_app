@@ -16,6 +16,7 @@ spec:
     - repoURL: https://github.com/VanGoMu/argo_app.git
       targetRevision: HEAD
       ref: values
+      path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: ddbb
@@ -34,28 +35,3 @@ spec:
         factor: 2
         maxDuration: 1m
   revisionHistoryLimit: 3
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: bitnami-repo
-  namespace: argocd
-  labels:
-    argocd.argoproj.io/secret-type: repository
-type: Opaque
-stringData:
-  type: helm
-  name: bitnami
-  url: https://charts.bitnami.com/bitnami
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: argocd-cm
-  namespace: argocd
-data:
-  repositories: |
-    - type: helm
-      name: bitnami
-      url: https://charts.bitnami.com/bitnami
-      
